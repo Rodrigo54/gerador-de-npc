@@ -1,4 +1,5 @@
-# Dnd
+# Gerador de NPC para D&D 5e
+[![screencapture-localhost-4200-npc-edit-1495999409.png](https://s19.postimg.org/dk0xvwzub/screencapture-localhost-4200-npc-edit-1495999409.png)](https://postimg.org/image/ssqv9otin/)
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.0.1.
 
