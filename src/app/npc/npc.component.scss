@@ -1,0 +1,19 @@
+:host{
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  div{
+    flex: 1;
+  }
+  pre {
+      white-space: pre-wrap;
+      word-wrap: break-word;
+  }
+
+}
+stat-block {
+  /* A bit of margin for presentation purposes, to show off the drop
+  shadow. */
+  margin-left: 20px;
+  margin-top: 20px;
+}

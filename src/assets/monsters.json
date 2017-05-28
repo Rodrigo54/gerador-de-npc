@@ -1,0 +1,41 @@
+[
+  {
+    "nome": "Kobold",
+    "tipo": "Humanoide Pequeno (kobolds)",
+    "alinhamento": "leal e mau",
+    "ca": 12,
+    "pv": "5 (2d6 – 2)",
+    "deslocamento": "9 m",
+    "habilidades": {
+      "for": 7,
+      "des": 15,
+      "con": 9,
+      "int": 8,
+      "sab": 7,
+      "car": 8
+    },
+    "sentidos": "visão no escuro 18 m, Percepção passiva 8",
+    "idiomas": "Comum, Dracônico",
+    "nd": "1/8 (25 XP)",
+    "habilidadesEspeciais": [
+      {
+        "nome": "Sensibilidade à Luz Solar",
+        "descricao": "Enquanto estiver sob luz solar, o kobold tem desvantagem nas jogadas de ataque, assim como em testes de Sabedoria (Percepção) relacionados a visão."
+      },
+      {
+        "nome": "Táticas de Matilha",
+        "descricao": "O kobold tem vantagem nas jogadas de ataque contra uma criatura se, pelo menos, um dos aliados do kobold estiver a 1,5 metro da criaturas e não estiver incapacitado."
+      }
+    ],
+    "acoes": [
+      {
+        "nome": "Adaga",
+        "descricao": "Ataque Corpo-a-Corpo com Arma: +4 para atingir, alcance 1,5 m, um alvo. Acerto: 4 (1d4 + 2) de dano perfurante."
+      },
+      {
+        "nome": "Funda",
+        "descricao": "Ataque à Distância com Arma: +4 para atingir, distância 9/36 m, um alvo. Acerto: 4 (1d4 + 2) de dano de concussão."
+      }
+    ]
+  }
+]

@@ -1,0 +1,63 @@
+$bgcolor: rgb(253, 241, 220);
+
+:host {
+  display: inline-block;
+  /* Last child shouldn't have bottom margin, too much white space. */
+  #{"/deep/"} > *:last-child {
+    margin-bottom: 0;
+  }
+  #{"/deep/"} h3 {
+    border-bottom: 1px solid #7A200D;
+    color: #7A200D;
+    font-size: 21px;
+    font-variant: small-caps;
+    font-weight: normal;
+    letter-spacing: 1px;
+    margin: 0;
+    margin-bottom: 0.5em;
+
+    break-inside: avoid-column;
+    break-after: avoid-column;
+  }
+
+  /* For user-level p elems. */
+  #{"/deep/"} p {
+    margin-top: 0.3em;
+    margin-bottom: 0.9em;
+    line-height: 1.5;
+  }
+}
+
+#content-wrap {
+  box-shadow: 0 6px 10px 0 rgba(0, 0, 0, .14),
+              0 1px 18px 0 rgba(0, 0, 0, .12),
+              0 3px 5px -1px rgba(0, 0, 0, .4);
+
+  border-bottom-color: #E69A28;
+  border-bottom-width: 5px;
+  border-bottom-style: solid;
+  border-top-color: #E69A28;
+  border-top-width: 5px;
+  border-top-style: solid;
+  border-radius: 5px;
+
+
+  font-family: 'Noto Sans', 'Myriad Pro', Calibri, Helvetica, Arial,
+                sans-serif;
+  font-size: 13.5px;
+  background-color: $bgcolor;
+  padding: 1em;
+
+  position: relative;
+  z-index: 0;
+  height: 100%;
+  width: 400px;
+}
+
+:host([two-column]) #content-wrap {
+  /* One column is 400px and the gap between them is 40px. */
+  width: 840px;
+  columns: 400px;
+  column-gap: 40px;
+  column-fill: auto;
+}

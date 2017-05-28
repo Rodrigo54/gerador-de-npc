@@ -1,0 +1,28 @@
+:host{
+  display: flex;
+  flex-direction: row;
+  font-family: 'Noto Sans', 'Myriad Pro', Calibri, Helvetica, Arial,
+              sans-serif;
+  div{
+    flex: 1;
+  }
+  form{
+    padding: 1em 5em;
+    display: flex;
+    flex-direction: column;
+  }
+  md-input-container, button, h3{
+    margin: 0 5px;
+  }
+}
+.inline-form{
+  display: flex;
+  flex-flow: row nowrap;
+}
+.bloco{
+  border: 1px #e0e0e0 solid;
+  border-radius: 5px;
+  margin: 5px;
+  display: flex;
+  flex-flow: column nowrap;
+}
