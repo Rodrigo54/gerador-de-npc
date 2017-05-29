@@ -1,85 +1,107 @@
 <div>
-  <form class="example-form">
+  <form #f="ngForm" (ngSubmit)="onSubmit(f)">
     <md-input-container>
-      <input mdInput placeholder="Nome" [value]="dados.nome">
+      <input mdInput placeholder="Nome" name="nome" [(ngModel)]="dados.nome" required>
     </md-input-container>
     <div class="inline-form">
       <md-input-container style="flex-grow: 2">
-        <input mdInput placeholder="tipo" [value]="dados.tipo">
+        <input mdInput placeholder="tipo" name="tipo" [(ngModel)]="dados.tipo">
       </md-input-container>
       <md-input-container>
-        <input mdInput placeholder="Alinhamento" [value]="dados.alinhamento">
+        <input mdInput placeholder="Alinhamento" name="alinhamento" [(ngModel)]="dados.alinhamento">
       </md-input-container>
     </div>
     <div class="inline-form">
       <md-input-container>
-        <input mdInput placeholder="Classe de Armadura" [value]="dados.ca">
+        <input mdInput placeholder="Classe de Armadura" name="ca" type="number" [(ngModel)]="dados.ca">
       </md-input-container>
       <md-input-container>
-        <input mdInput placeholder="Pontos de Vida" [value]="dados.pv">
+        <input mdInput placeholder="Pontos de Vida" name="pv" [(ngModel)]="dados.pv">
       </md-input-container>
       <md-input-container>
-        <input mdInput placeholder="Deslocamento " [value]="dados.deslocamento">
+        <input mdInput placeholder="Deslocamento" name="deslocamento" [(ngModel)]="dados.deslocamento">
       </md-input-container>
     </div>
 
     <div class="inline-form">
       <md-input-container align="end">
         <span mdPrefix>FOR:</span>
-        <input mdInput type="number" [value]="dados.habilidades?.for">
+        <input mdInput type="number" name="for"
+          [ngModel]="dados.habilidades?.for"
+          (ngModelChange)="dados.habilidades.for=$event">
       </md-input-container>
       <md-input-container align="end">
         <span mdPrefix>DES:</span>
-        <input mdInput type="number" [value]="dados.habilidades?.des">
+        <input mdInput type="number" name="des"
+          [ngModel]="dados.habilidades?.des"
+          (ngModelChange)="dados.habilidades.des=$event">
       </md-input-container>
       <md-input-container align="end">
         <span mdPrefix>CON:</span>
-        <input mdInput type="number" [value]="dados.habilidades?.con">
+        <input mdInput type="number" name="con"
+          [ngModel]="dados.habilidades?.con"
+          (ngModelChange)="dados.habilidades.con=$event">
       </md-input-container>
       <md-input-container align="end">
         <span mdPrefix>INT:</span>
-        <input mdInput type="number" [value]="dados.habilidades?.int">
+        <input mdInput type="number" name="int"
+          [ngModel]="dados.habilidades?.int"
+          (ngModelChange)="dados.habilidades.int=$event">
       </md-input-container>
       <md-input-container align="end">
         <span mdPrefix>SAB:</span>
-        <input mdInput type="number" [value]="dados.habilidades?.sab">
+        <input mdInput type="number" name="sab"
+          [ngModel]="dados.habilidades?.sab"
+          (ngModelChange)="dados.habilidades.sab=$event">
       </md-input-container>
       <md-input-container align="end">
         <span mdPrefix>CAR:</span>
-        <input mdInput type="number" [value]="dados.habilidades?.car">
+        <input mdInput type="number" name="car"
+          [ngModel]="dados.habilidades?.car"
+          (ngModelChange)="dados.habilidades.car=$event">
       </md-input-container>
     </div>
     <md-input-container>
-      <input mdInput placeholder="Sentidos" [value]="dados.sentidos">
+      <input mdInput placeholder="Sentidos" name="sentidos" [(ngModel)]="dados.sentidos">
     </md-input-container>
     <md-input-container>
-      <input mdInput placeholder="Idiomas" [value]="dados.idiomas">
+      <input mdInput placeholder="Idiomas" name="idiomas" [(ngModel)]="dados.idiomas">
     </md-input-container>
     <md-input-container>
-      <input mdInput placeholder="Nível de Desafio" [value]="dados.nd">
+      <input mdInput placeholder="Nível de Desafio" name="nd" [(ngModel)]="dados.nd">
     </md-input-container>
 
     <md-tab-group style="height: 500px" md-stretch-tabs>
       <md-tab label="Habilidades Especiais">
-        <ng-template ngFor let-habilit [ngForOf]="dados.habilidadesEspeciais">
+        <ng-template ngFor let-habilit [ngForOf]="dados.habilidadesEspeciais" let-i="index">
           <md-card class="bloco">
             <md-input-container>
-              <input mdInput placeholder="Nome" [value]="habilit.nome">
+              <input mdInput placeholder="Nome"
+                name="habi-nome-{{i}}"
+                [(ngModel)]="habilit.nome">
             </md-input-container>
             <md-input-container>
-              <textarea rows="3" mdInput placeholder="Descrição">{{ habilit.descricao }}</textarea>
+              <textarea rows="3" mdInput placeholder="Descrição"
+                name="habi-descricao-{{i}}"
+                [(ngModel)]="habilit.descricao">
+              </textarea>
             </md-input-container>
           </md-card>
         </ng-template>
       </md-tab>
       <md-tab label="Ações">
-        <ng-template ngFor let-acoes [ngForOf]="dados.acoes">
+        <ng-template ngFor let-acoes [ngForOf]="dados.acoes" let-i="index">
           <md-card class="bloco">
             <md-input-container>
-              <input mdInput placeholder="Nome" [value]="acoes.nome">
+              <input mdInput placeholder="Nome"
+              name="acoes-nome-{{i}}"
+              [(ngModel)]="acoes.nome">
             </md-input-container>
             <md-input-container>
-              <textarea rows="3" mdInput placeholder="Descrição">{{ acoes.descricao }}</textarea>
+              <textarea rows="3" mdInput placeholder="Descrição"
+                name="acoes-descricao-{{i}}"
+                [(ngModel)]="acoes.descricao">
+              </textarea>
             </md-input-container>
           </md-card>
         </ng-template>

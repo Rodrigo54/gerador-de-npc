@@ -1,3 +1,4 @@
+import { FormsModule } from '@angular/forms';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { NPCComponent } from './npc.component';
@@ -23,7 +24,8 @@ import {
     MdCheckboxModule,
     MdCardModule,
     MdTabsModule,
-    MdInputModule
+    MdInputModule,
+    FormsModule
   ],
   declarations: [NPCComponent, NpcFormComponent]
 })

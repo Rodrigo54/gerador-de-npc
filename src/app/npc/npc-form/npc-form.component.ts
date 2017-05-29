@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Npc } from './npc';
 
 @Component({
   selector: 'app-npc-form',
@@ -7,16 +8,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class NpcFormComponent implements OnInit {
   title = 'app works!';
-  dados: object = {};
+  dados = {} as Npc;
 
   constructor() { }
 
   ngOnInit() {
-    this.fetch((data) => {
+    this.fetch((data: Npc[]) => {
       this.dados = data[0];
-      console.log(data);
+      console.log(this.dados);
     });
-
   }
 
   fetch(cb) {
@@ -28,5 +28,9 @@ export class NpcFormComponent implements OnInit {
     };
 
     req.send();
+  }
+
+  onSubmit(dados){
+    console.log(dados);
   }
 }
