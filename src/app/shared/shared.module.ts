@@ -7,6 +7,7 @@ import { TaperedRuleComponent } from './tapered-rule/tapered-rule.component';
 import { PropertyLineComponent } from './property-line/property-line.component';
 import { AbilitiesBlockComponent } from './abilities-block/abilities-block.component';
 import { PropertyBlockComponent } from './property-block/property-block.component';
+import { NpcBoxComponent } from './npc-box/npc-box.component';
 
 @NgModule({
   imports: [
@@ -19,7 +20,8 @@ import { PropertyBlockComponent } from './property-block/property-block.componen
     TaperedRuleComponent,
     PropertyLineComponent,
     AbilitiesBlockComponent,
-    PropertyBlockComponent
+    PropertyBlockComponent,
+    NpcBoxComponent
   ],
   exports: [
     StatBlockComponent,
@@ -27,7 +29,8 @@ import { PropertyBlockComponent } from './property-block/property-block.componen
     TopStatsComponent,
     PropertyLineComponent,
     AbilitiesBlockComponent,
-    PropertyBlockComponent
+    PropertyBlockComponent,
+    NpcBoxComponent
   ]
 })
 export class SharedModule { }

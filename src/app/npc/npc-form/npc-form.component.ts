@@ -1,3 +1,4 @@
+import { NpcService } from './../npc.service';
 import { Component, OnInit } from '@angular/core';
 import { Npc } from './npc';
 
@@ -7,30 +8,21 @@ import { Npc } from './npc';
   styleUrls: ['./npc-form.component.scss']
 })
 export class NpcFormComponent implements OnInit {
-  title = 'app works!';
-  dados = {} as Npc;
+  dados = {};
 
-  constructor() { }
+  constructor(
+    private service: NpcService,
+  ) { }
 
   ngOnInit() {
-    this.fetch((data: Npc[]) => {
-      this.dados = data[0];
-      console.log(this.dados);
-    });
+    this.service.getNPC(1)
+             .subscribe((data) => {
+               console.log(data);
+                this.dados = data;
+              });
   }
 
-  fetch(cb) {
-    const req = new XMLHttpRequest();
-    req.open('GET', `assets/monsters.json`);
-
-    req.onload = () => {
-      cb(JSON.parse(req.response));
-    };
-
-    req.send();
-  }
-
-  onSubmit(dados){
+  onSubmit(dados) {
     console.log(dados);
   }
 }

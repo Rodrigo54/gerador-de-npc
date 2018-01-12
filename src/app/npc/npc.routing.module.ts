@@ -6,9 +6,14 @@ import { NpcFormComponent } from './npc-form/npc-form.component';
 import { NPCComponent } from './npc.component';
 
 const routes: Routes = [
-  // { path: '', component: NPCComponent },
-  { path: 'edit', component: NpcFormComponent },
-  { path: '', redirectTo: 'edit', pathMatch:"full" },
+  {
+    path: '', component: NPCComponent,
+    children: [
+      { path: 'edit', component: NpcFormComponent },
+      { path: 'new', component: NpcFormComponent },
+    ]
+  },
+  // { path: '', redirectTo: 'edit', pathMatch:"full" },
 ];
 
 @NgModule({

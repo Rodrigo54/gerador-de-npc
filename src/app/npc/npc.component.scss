@@ -17,3 +17,76 @@ stat-block {
   margin-left: 20px;
   margin-top: 20px;
 }
+
+.navbar {
+  position: fixed;
+  z-index: 2;
+  top: 0;
+  left: 0;
+  right: 0;
+  box-shadow: 0 3px 5px -1px rgba(0, 0, 0, .2), 0 6px 10px 0 rgba(0, 0, 0, .14), 0 1px 18px 0 rgba(0, 0, 0, .12);
+}
+
+.logo{
+  height: 40px;
+}
+
+.filler {
+  flex: 1 1 auto;
+}
+
+.sidebar-list-item {
+  border-bottom: 1px solid;
+  margin: 0;
+  padding: 0;
+  border-color: rgba(0, 0, 0, .06);
+  color: rgba(0,0,0,.54) !important;
+  cursor: pointer;
+  &:hover {
+    background-color: rgba(0,0,0,.04) !important;
+    color: red !important;
+  }
+  &.active {
+    background-color: rgba(0,0,0,.04) !important;
+    color: red !important;
+    font-weight: bold;
+  }
+}
+
+.sidebar-header {
+  background: rgba(0, 0, 0, .32);
+  color: #fff;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+.sidebar-title {
+  border: none;
+  font-size: 10px;
+  letter-spacing: 1px;
+  line-height: 24px;
+  text-transform: uppercase;
+  font-weight: 400;
+  margin: 0;
+  padding: 0 16px;
+}
+
+
+
+.menu-button {
+  color: #fff;
+  box-shadow: none;
+  user-select: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+  filter: none;
+  font-weight: normal;
+  height: auto;
+  line-height: inherit;
+  margin: 0;
+  min-width: 0;
+  padding: 0;
+  text-align: left;
+  text-decoration: none;
+}

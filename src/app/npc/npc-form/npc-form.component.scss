@@ -1,8 +1,12 @@
 :host{
-  display: flex;
-  flex-direction: row;
   font-family: 'Noto Sans', 'Myriad Pro', Calibri, Helvetica, Arial,
               sans-serif;
+  .form-tab-group{
+    height: 100vh;
+    .tab-content{
+      padding: 15px;
+    }
+  }
   div{
     flex: 1;
   }
@@ -13,6 +17,7 @@
   }
   md-input-container, button, h3{
     margin: 0 5px;
+    flex-grow: 1;
   }
 }
 .inline-form{
@@ -26,3 +31,4 @@
   display: flex;
   flex-flow: column nowrap;
 }
+

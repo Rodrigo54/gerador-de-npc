@@ -1,32 +1,23 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, ViewChild} from '@angular/core';
+import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
 
 @Component({
   selector: 'app-npc',
   templateUrl: './npc.component.html',
   styleUrls: ['./npc.component.scss']
 })
-export class NPCComponent implements OnInit {
-  title = 'app works!';
-  dados: object = {};
+export class NPCComponent {
+  @ViewChild('sidenav') sidenav;
+  isLargeScreen: boolean;
 
-  constructor() { }
-
-  ngOnInit() {
-    this.fetch((data) => {
-      this.dados = data[0];
-      console.log(data);
-    });
-
+  constructor(breakpointObserver: BreakpointObserver) {
+    breakpointObserver
+      .observe([Breakpoints.TabletLandscape, Breakpoints.WebLandscape])
+      .subscribe(result => {
+        this.isLargeScreen = result.matches;
+      });
   }
 
-  fetch(cb) {
-    const req = new XMLHttpRequest();
-    req.open('GET', `assets/monsters.json`);
+  logout() {}
 
-    req.onload = () => {
-      cb(JSON.parse(req.response));
-    };
-
-    req.send();
-  }
 }

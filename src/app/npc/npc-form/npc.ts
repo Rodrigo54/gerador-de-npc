@@ -1,19 +1,19 @@
 export interface Npc {
-  nome: string,
-  tipo: string,
-  alinhamento: string,
-  ca: number,
-  pv: string,
-  deslocamento: string,
-  habilidades: habilidades,
-  sentidos: string,
-  idiomas: string,
-  nd: string,
-  habilidadesEspeciais: acoes[],
-  acoes: acoes[]
+  nome: string;
+  tipo: string;
+  alinhamento: string;
+  ca: number;
+  pv: string;
+  deslocamento: string;
+  habilidades: Habilidades;
+  sentidos: string;
+  idiomas: string;
+  nd: string;
+  habilidadesEspeciais: Acoes[];
+  acoes: Acoes[];
 }
 
-export interface habilidades {
+export interface Habilidades {
   for: number,
   des: number,
   con: number,
@@ -22,7 +22,7 @@ export interface habilidades {
   car: number
 }
 
-export interface acoes {
+export interface Acoes {
   nome: string,
   descricao: string
 }
